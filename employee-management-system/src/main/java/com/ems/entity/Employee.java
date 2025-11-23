@@ -1,5 +1,9 @@
 package com.ems.entity;
 
+import org.hibernate.annotations.SQLDelete;
+import org.hibernate.annotations.SQLRestriction;
+import org.hibernate.annotations.Where;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -19,6 +23,8 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
+@SQLDelete(sql = "UPDATE EMPLOYEES_TAB SET STATUS='INACTIVE' WHERE EMPID=?")
+@SQLRestriction(value = "STATUS <> 'INACTIVE' ")
 public class Employee {
 
 	@Id
@@ -34,6 +40,6 @@ public class Employee {
 	@JoinColumn(name="dept_id" )
 	private Department department;
 	@Builder.Default
-	private Integer status=1;
+	private String status="ACTIVE";
 	
 }
