@@ -17,6 +17,6 @@ import lombok.NoArgsConstructor;
 public class Department {
 
 	@Id
-	private Integer deptId;
+	private Long deptId;
 	private String deptName;
 }
