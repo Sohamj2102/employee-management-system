@@ -32,7 +32,7 @@
 
 <div class="form-box">
 
-    <h5 class="text-center mb-3">Add Employee</h5>
+    <h5 class="text-center mb-2">Add Employee</h5>
 
     <frm:form action="add" method="post" modelAttribute="employee">
 
@@ -72,7 +72,7 @@
         </div>
 
         <!-- BUTTONS -->
-        <div class="text-center mt-3">
+        <div class="text-center mt-2">
             <button type="submit" class="btn btn-primary btn-sm">Save</button>
             <a href="${pageContext.request.contextPath}/" class="btn btn-secondary btn-sm">Back</a>
         </div>
