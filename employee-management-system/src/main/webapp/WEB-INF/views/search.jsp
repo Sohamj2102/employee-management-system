@@ -15,17 +15,9 @@
 
 <div class="d-flex justify-content-center">
     <div class="container mt-4" style="max-width: 1100px;">
-
-        <h2 class="text-center mb-4">Employee List</h2>
-
         <c:if test="${!empty msg}">
             <div class="alert alert-info text-center">${msg}</div>
         </c:if>
-        <!-- Search Employee by ID -->
-<form action="search" method="get" class="d-flex mb-3" style="max-width: 300px;">
-    <input type="number" name="id" class="form-control me-2" placeholder="Enter Employee ID" required>
-    <button class="btn btn-primary">Search</button>
-</form>
         <table class="table table-bordered table-striped text-center">
             <thead class="table-dark">
                 <tr>
@@ -75,7 +67,7 @@
         </table>
 
         <div class="text-center mt-4">
-            <a href="add" class="btn btn-success m-2">Add Employee</a>
+            <a href="employees" class="btn btn-success m-2">Back</a>
             <a href="./" class="btn btn-secondary m-2">Home</a>
         </div>
 

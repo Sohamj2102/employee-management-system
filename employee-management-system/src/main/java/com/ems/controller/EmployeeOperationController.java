@@ -91,4 +91,18 @@ public class EmployeeOperationController {
 		rda.addFlashAttribute("msg", empService.deleteEmployee(id));
 		return "redirect:employees";
 	}
+	
+	//Handler method for search employee by id
+	@GetMapping("/search")
+	public String searchEmployeeById(@RequestParam("id") Long eId,Model model) {
+		try {
+			Employee emp = empService.getEmployee(eId);
+			List<Employee> employeeList=List.of(emp);
+			model.addAttribute("employeeList", employeeList);
+			model.addAttribute("msg", "1 Employee Found");
+		} catch (Exception e) {
+			model.addAttribute("employeeList", null);
+		}
+		return "search";
+	}
 }
